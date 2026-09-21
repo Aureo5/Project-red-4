@@ -1,0 +1,5 @@
+package jeu
+
+func Fight() {
+
+}
