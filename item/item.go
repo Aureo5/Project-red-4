@@ -1,6 +1,6 @@
 package jeu
 
-type item struct {
+type Item struct {
 	ID       string
 	nom      string
 	prix     float64
