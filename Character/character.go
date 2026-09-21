@@ -51,7 +51,7 @@ func name() string {
 	}
 }
 func (c character) info() {
-	fmt.Println("===Informations sur le personnage=== :")
+	fmt.Println("===Informations sur le personnage=== ")
 	fmt.Printf("Nom        : %s\n", c.name)
 	fmt.Printf("Classe     : %s\n", c.nameclass)
 	fmt.Printf("Vie        : %d\n", c.health)

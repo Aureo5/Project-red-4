@@ -6,7 +6,7 @@ import "fmt"
 func class(nom string) character {
 	var choice string
 	for {
-		fmt.Println("\n===Choisis ta classe=== :")
+		fmt.Println("\n===Choisis ta classe=== ")
 		fmt.Println("\n1. Éclaireur - Vie : 80 / Force : 15 / Vitesse : 75% ")
 		fmt.Println("compétences spéciales : coupe les membres pour déstabiliser l'ennemi -> +5 points de dégats / fusée -> appelle un soldat +20 points de \ndégats")
 		fmt.Println("\n2. Soldat - Vie  : 100 / Force : 20 / Vitesse : 50%")
