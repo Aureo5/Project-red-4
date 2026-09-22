@@ -2,18 +2,20 @@ package jeu
 
 import (
 	"fmt"
+	equip "jeu/equipment"
 	item "jeu/item"
 )
 
 type Character struct {
-	Name       string      // nom du personnage
-	Health     int         // points de vie du personnage
-	Vitesse    int         // vitesse du personnage
-	Experience int         // points d'expérience du personnage
-	Nameclass  string      // classe du personnage
-	Strength   int         // force du personnage
-	Or         int         // or du personnage
-	Inventory  []item.Item //inventaire du personnage
+	Name       string            // nom du personnage
+	Health     int               // points de vie du personnage
+	Vitesse    int               // vitesse du personnage
+	Experience int               // points d'expérience du personnage
+	Nameclass  string            // classe du personnage
+	Strength   int               // force du personnage
+	Or         int               // or du personnage
+	Inventory  []item.Item       //inventaire du personnage
+	Equipment  []equip.Equipment // Equipement du personnage
 }
 
 // vérifie si le nom est valide (première lettre majusculeS, reste en minuscule)
