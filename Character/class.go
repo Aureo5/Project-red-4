@@ -24,12 +24,16 @@ func Class(nom string) Character {
 		switch choice {
 		case "1":
 			perso := Character{Name: nom, Health: 80, Vitesse: 75, Nameclass: "eclaireur", Strength: 15, Or: 100}
-			fmt.Println(perso)
+			perso.Displayinfo()
 			Firstdistrict.StartingPoint()
 		case "2":
-			return Character{Name: nom, Health: 100, Vitesse: 50, Nameclass: "soldat", Strength: 20, Or: 100}
+			perso := Character{Name: nom, Health: 100, Vitesse: 50, Nameclass: "soldat", Strength: 20, Or: 100}
+			perso.Displayinfo()
+			Firstdistrict.StartingPoint()
 		case "3":
-			return Character{Name: nom, Health: 120, Vitesse: 50, Nameclass: "medic", Strength: 15, Or: 100}
+			perso := Character{Name: nom, Health: 120, Vitesse: 50, Nameclass: "medic", Strength: 15, Or: 100}
+			perso.Displayinfo()
+			Firstdistrict.StartingPoint()
 		default:
 			fmt.Println("Choix invalide, réessaie.")
 		}
