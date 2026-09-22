@@ -5,11 +5,16 @@ import (
 	"time"
 )
 
-func Firstdistrict() {
+func StartingPoint() {
+	texteun := "Un titan colossale est apparue derrière le mur Arès et a créé une ouverture pour ses confrères !\nIl est de votre devoir de sauver les habitants tout en éliminant ces immondices. \nEn avant soldat !\n"
+	for _, lettre := range texteun {
+		fmt.Printf("%c", lettre)
+		time.Sleep(20 * time.Millisecond)
+	}
 
-	texte := "Bienvenue dans le district d'Heraclion ! \nLes géants ont envahi ce district... Libérez les murs de ces abominations et accédez au prochain district !"
+	textedeux := " ====Mission 1==== \nBienvenue dans le district d'Heraclion ! \nLes géants ont envahi ce district... Libérez les murs de ces abominations et accédez au prochain district !"
 
-	for _, lettre := range texte {
+	for _, lettre := range textedeux {
 		fmt.Printf("%c", lettre)
 		time.Sleep(20 * time.Millisecond)
 	}
