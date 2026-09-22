@@ -1,0 +1,40 @@
+package jeu
+
+import (
+	"fmt"
+	character "jeu/Character"
+	inventaire "jeu/inventory"
+	lore "jeu/lore"
+	"os"
+)
+
+func Menu() {
+	choix := 0
+	fmt.Println("1.Start")
+	fmt.Println("2.Personnage")
+	fmt.Println("3.Inventaire")
+	fmt.Println("4.Quitter")
+	fmt.Printf("Ton choix: ")
+
+	fmt.Scan(&choix)
+	var perso character.Character
+
+	switch choix {
+	case 1:
+		lore.Lore()
+	case 2:
+		if perso.Name == "" {
+			fmt.Println("Lancer la partie pour créer votre personnage")
+			Menu()
+		} else {
+			perso.Displayinfo()
+		}
+	case 3:
+		inventaire.DisplayInv(perso)
+		Menu()
+	case 4:
+		os.Exit(0)
+	default:
+		fmt.Println("Choix invalide")
+	}
+}
