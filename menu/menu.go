@@ -2,7 +2,8 @@ package jeu
 
 import (
 	"fmt"
-	character "jeu/Project-red-4/Character"
+	character "jeu/Project-red-4/character"
+	inv "jeu/Project-red-4/inventory"
 	lore "jeu/Project-red-4/lore"
 	"os"
 )
@@ -29,7 +30,8 @@ func Menu() {
 			perso.Info()
 		}
 	case 3:
-		fmt.Println()
+		inv.DisplayInv(perso)
+		Menu()
 	case 4:
 		os.Exit(0)
 	default:

@@ -2,7 +2,7 @@ package jeu
 
 import (
 	"fmt"
-	"jeu/Project-red-4/Character"
+	"jeu/Project-red-4/character"
 	"time"
 )
 
