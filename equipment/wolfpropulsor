@@ -1,0 +1,5 @@
+package jeu
+
+func NewWolfPropulsor() Equipment {
+	return Equipment{ID: "wolf_prop", Name: "Propulseur de loup", Gaz: 100, Healthbonus: 60, Speedbonus: 15}
+}
