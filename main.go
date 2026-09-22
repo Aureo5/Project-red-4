@@ -1,9 +1,9 @@
 package main
 
 import (
-	"jeu/Project-red-4/menu"
+	Menu "jeu/menu"
 )
 
 func main() {
-	jeu.Menu()
+	Menu.Menu()
 }

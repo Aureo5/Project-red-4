@@ -2,9 +2,9 @@ package jeu
 
 import (
 	"fmt"
-	character "jeu/Project-red-4/character"
-	inv "jeu/Project-red-4/inventory"
-	lore "jeu/Project-red-4/lore"
+	character "jeu/character"
+	inventaire "jeu/inventory"
+	lore "jeu/lore"
 	"os"
 )
 
@@ -14,7 +14,7 @@ func Menu() {
 	fmt.Println("2.Personnage")
 	fmt.Println("3.Inventaire")
 	fmt.Println("4.Quit")
-	fmt.Printf("Que faire: ")
+	fmt.Printf("Ton choix: ")
 
 	fmt.Scan(&choix)
 	var perso character.Character
@@ -27,10 +27,10 @@ func Menu() {
 			fmt.Println("Lancer la partie pour créer votre personnage")
 			Menu()
 		} else {
-			perso.Info()
+			perso.Displayinfo()
 		}
 	case 3:
-		inv.DisplayInv(perso)
+		inventaire.DisplayInv(perso)
 		Menu()
 	case 4:
 		os.Exit(0)

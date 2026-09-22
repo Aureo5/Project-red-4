@@ -2,21 +2,21 @@ package jeu
 
 import (
 	"fmt"
-	"jeu/Project-red-4/item"
+	item "jeu/item"
 )
 
 type Character struct {
-	Name       string     // nom du personnage
-	Health     int        // points de vie du personnage
-	Vitesse    int        // vitesse du personnage
-	Experience int        // points d'expérience du personnage
-	Nameclass  string     // classe du personnage
-	Strength   int        // force du personnage
-	Or         int        // or du personnage
-	Inventaire []jeu.Item //inventaire du personnage
+	Name       string      // nom du personnage
+	Health     int         // points de vie du personnage
+	Vitesse    int         // vitesse du personnage
+	Experience int         // points d'expérience du personnage
+	Nameclass  string      // classe du personnage
+	Strength   int         // force du personnage
+	Or         int         // or du personnage
+	Inventory  []item.Item //inventaire du personnage
 }
 
-// vérifie si le nom est valide (première lettre majuscule, reste en minuscule)
+// vérifie si le nom est valide (première lettre majusculeS, reste en minuscule)
 func Maj(nom string) bool {
 	if len(nom) == 0 {
 		return false
@@ -42,7 +42,7 @@ func Name() string {
 	var nom string
 
 	for {
-		fmt.Print("===Choisis le nom de ton personnage=== \n⚠️  le nom doit contenir une majuscule au début puis des minuscules: ")
+		fmt.Print("\n===Choisis le nom de ton personnage=== \n⚠️  le nom doit contenir une majuscule au début puis des minuscules et aucun caractère spécial: ")
 		fmt.Scan(&nom)
 
 		if Maj(nom) {
@@ -52,8 +52,8 @@ func Name() string {
 		fmt.Println("Nom invalide, réessaie.")
 	}
 }
-func (c Character) Info() {
-	fmt.Println("===Informations sur le personnage=== :")
+func (c Character) Displayinfo() {
+	fmt.Println("\n===Informations sur le personnage=== ")
 	fmt.Printf("Nom        : %s\n", c.Name)
 	fmt.Printf("Classe     : %s\n", c.Nameclass)
 	fmt.Printf("Vie        : %d\n", c.Health)

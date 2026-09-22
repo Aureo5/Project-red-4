@@ -1,12 +1,15 @@
 package jeu
 
-import "fmt"
+import (
+	"fmt"
+	Firstdistrict "jeu/firstdistrict"
+)
 
 // différebntes classes de personnages avec leurs caractéristiques
 func Class(nom string) Character {
 	var choice string
 	for {
-		fmt.Println("\n===Choisis ta classe=== :")
+		fmt.Println("\n===Choisis ta classe=== ")
 		fmt.Println("\n1. Éclaireur - Vie : 80 / Force : 15 / Vitesse : 75% ")
 		fmt.Println("compétences spéciales : coupe les membres pour déstabiliser l'ennemi -> +5 points de dégats / fusée -> appelle un soldat +20 points de \ndégats")
 		fmt.Println("\n2. Soldat - Vie  : 100 / Force : 20 / Vitesse : 50%")
@@ -20,7 +23,9 @@ func Class(nom string) Character {
 		// création du personnage en fonction du choix de l'utilisateur
 		switch choice {
 		case "1":
-			return Character{Name: nom, Health: 80, Vitesse: 75, Nameclass: "eclaireur", Strength: 15, Or: 100}
+			perso := Character{Name: nom, Health: 80, Vitesse: 75, Nameclass: "eclaireur", Strength: 15, Or: 100}
+			fmt.Println(perso)
+			Firstdistrict.StartingPoint()
 		case "2":
 			return Character{Name: nom, Health: 100, Vitesse: 50, Nameclass: "soldat", Strength: 20, Or: 100}
 		case "3":
@@ -34,5 +39,6 @@ func CreateCharacter() Character {
 	// création du personnage
 	nom := Name()
 	perso := Class(nom)
-	return perso //changement a return perso
+	perso.Displayinfo()
+	return perso
 }
