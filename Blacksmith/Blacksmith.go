@@ -5,10 +5,8 @@ import (
 	"time"
 )
 
-func Merchant() {
-
-	texte := "\nBonjour jeune aventurier ! Bienvenur dans mon magasin, qu'est-ce qu'il te ferais plaisir ?"
-
+func Blacksmith() {
+	texte := "\nBonjour jeune aventurier ! Bienvenue dans mon atelier, que veux-tu forger ?"
 	for _, lettre := range texte {
 		fmt.Printf("%c", lettre)
 		time.Sleep(20 * time.Millisecond)

@@ -1,8 +1,9 @@
 package jeu
 
 import (
-	"Jeu/firstshop"
 	"fmt"
+	Blacksmith "jeu/Blacksmith"
+	Merchant "jeu/Merchant"
 )
 
 func Choicecamp() {
@@ -18,13 +19,12 @@ func Choicecamp() {
 
 		switch choix {
 		case "1":
-			Merchant()
+			Merchant.Merchant()
 			return
 		case "2":
-			fmt.Println
+			Blacksmith.Blacksmith()
 			return
 		case "3":
-			fmt.Println
 			return
 		default:
 			fmt.Println("Choix invalide, réessaie.")

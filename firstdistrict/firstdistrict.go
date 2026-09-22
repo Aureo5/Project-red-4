@@ -30,7 +30,7 @@ func Choicefirstdistrict() {
 
 		switch choix {
 		case "1":
-			fmt.Println("Bienvenue au camp ! Ici tu pourras acheter des objets et sauvegarder ta partie !")
+			fmt.Println("\nBienvenue au camp ! Ici tu pourras acheter des objets et sauvegarder ta partie !")
 			return
 		case "2":
 			fmt.Println("Bienvenue sur le champ de bataille ! Sois prudent, les géants peuvent être plus dangereux que tu ne le penses...")
