@@ -2,7 +2,7 @@ package jeu
 
 import (
 	"fmt"
-	character "jeu/character"
+	character "jeu/Character"
 	inventaire "jeu/inventory"
 	lore "jeu/lore"
 	"os"

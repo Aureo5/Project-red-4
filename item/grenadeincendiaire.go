@@ -6,5 +6,5 @@ type burn struct {
 }
 
 func GrenadeIncendiaire() {
-	molo()
+
 }

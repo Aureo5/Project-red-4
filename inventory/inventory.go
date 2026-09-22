@@ -2,7 +2,7 @@ package jeu
 
 import (
 	"fmt"
-	character "jeu/character"
+	character "jeu/Character"
 )
 
 func DisplayInv(c character.Character) {

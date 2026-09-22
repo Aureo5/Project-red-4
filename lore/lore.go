@@ -2,7 +2,7 @@ package jeu
 
 import (
 	"fmt"
-	CreateCharacter "jeu/character"
+	CreateCharacter "jeu/Character"
 	"time"
 )
 
