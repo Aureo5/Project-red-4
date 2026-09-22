@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-type character struct {
+type Character struct {
 	Name       string // nom du personnage
 	Health     int    // points de vie du personnage
 	Vitesse    int    // vitesse du personnage
@@ -40,7 +40,7 @@ func Name() string {
 	var nom string
 
 	for {
-		fmt.Print("===Choisis le nom de ton personnage=== \n⚠️  le nom doit contenir une majuscule au début puis des minuscules et aucun caractère spécial: ")
+		fmt.Print("\n===Choisis le nom de ton personnage=== \n⚠️  le nom doit contenir une majuscule au début puis des minuscules et aucun caractère spécial: ")
 		fmt.Scan(&nom)
 
 		if Maj(nom) {
@@ -50,7 +50,7 @@ func Name() string {
 		fmt.Println("Nom invalide, réessaie.")
 	}
 }
-func (c character) Displayinfo() {
+func (c Character) Displayinfo() {
 	fmt.Println("\n===Informations sur le personnage=== ")
 	fmt.Printf("Nom        : %s\n", c.Name)
 	fmt.Printf("Classe     : %s\n", c.Nameclass)

@@ -3,7 +3,7 @@ package jeu
 import "fmt"
 
 // différebntes classes de personnages avec leurs caractéristiques
-func Class(nom string) character {
+func Class(nom string) Character {
 	var choice string
 	for {
 		fmt.Println("\n===Choisis ta classe=== ")
@@ -20,17 +20,17 @@ func Class(nom string) character {
 		// création du personnage en fonction du choix de l'utilisateur
 		switch choice {
 		case "1":
-			return character{Name: nom, Health: 80, Vitesse: 75, Nameclass: "eclaireur", Strength: 15, Or: 100}
+			return Character{Name: nom, Health: 80, Vitesse: 75, Nameclass: "eclaireur", Strength: 15, Or: 100}
 		case "2":
-			return character{Name: nom, Health: 100, Vitesse: 50, Nameclass: "soldat", Strength: 20, Or: 100}
+			return Character{Name: nom, Health: 100, Vitesse: 50, Nameclass: "soldat", Strength: 20, Or: 100}
 		case "3":
-			return character{Name: nom, Health: 120, Vitesse: 50, Nameclass: "medic", Strength: 15, Or: 100}
+			return Character{Name: nom, Health: 120, Vitesse: 50, Nameclass: "medic", Strength: 15, Or: 100}
 		default:
 			fmt.Println("Choix invalide, réessaie.")
 		}
 	}
 }
-func CreateCharacter() character {
+func CreateCharacter() Character {
 	// création du personnage
 	nom := Name()
 	perso := Class(nom)
