@@ -1,9 +1,11 @@
 package main
 
 import (
-	"jeu/Character"
+	character "jeu/Character"
+	firstdtrict "jeu/firstdistrict"
 )
 
 func main() {
-	jeu.CreateCharacter()
+	character.CreateCharacter()
+	firstdtrict.Firstdistrict()
 }
