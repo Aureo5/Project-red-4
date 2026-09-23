@@ -10,6 +10,7 @@ type Character struct {
 	Name       string
 	Health     int
 	Vitesse    int
+	Level      int
 	Experience int
 	Nameclass  string
 	Strength   int

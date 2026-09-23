@@ -15,7 +15,6 @@ func (c *Character) AddItem(i item.Item) {
 	c.Inventory = append(c.Inventory, i)
 }
 
-// Buy vérifie l'or disponible, le déduit, et ajoute l'item à l'inventaire
 func (c *Character) Buy(i item.Item) {
 	coutTotal := i.Prix * float64(i.Quantity)
 

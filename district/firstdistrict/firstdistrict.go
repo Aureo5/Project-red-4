@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"jeu/Camp"
 	char "jeu/Character"
+	ennemy "jeu/Npc/Ennemy"
+	fight "jeu/fight"
 	"time"
 )
 
@@ -42,7 +44,7 @@ func Choicefirstdistrict(perso *char.Character) {
 			jeu.Choicecamp(perso)
 		case "2":
 			fmt.Println("Bienvenue sur le champ de bataille ! Sois prudent, les géants peuvent être plus dangereux que tu ne le penses...")
-			return
+			fight.StartFight(perso)
 		case "3":
 			fmt.Println("Attention ! Un titan gueule de loup protège le prochain mur, affronte le avant d'accéder au prochain district !")
 			return
