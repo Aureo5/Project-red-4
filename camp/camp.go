@@ -2,8 +2,8 @@ package jeu
 
 import (
 	"fmt"
-	Blacksmith "jeu/Blacksmith"
-	Merchant "jeu/Merchant"
+	Blacksmith "jeu/Npc/Blacksmith"
+	Merchant "jeu/Npc/Merchant"
 )
 
 func Choicecamp() {

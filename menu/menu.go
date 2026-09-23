@@ -2,8 +2,8 @@ package jeu
 
 import (
 	"fmt"
-	inventaire "jeu/Inventory"
-	character "jeu/character"
+	character "jeu/Character"
+	inventaire "jeu/inventory"
 	lore "jeu/lore"
 	"os"
 )

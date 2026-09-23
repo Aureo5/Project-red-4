@@ -2,7 +2,7 @@ package jeu
 
 import (
 	"fmt"
-	"jeu/camp"
+	"jeu/Camp"
 	"time"
 )
 
