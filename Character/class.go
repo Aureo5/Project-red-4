@@ -2,7 +2,7 @@ package jeu
 
 import (
 	"fmt"
-	Equipement "jeu/equipement"
+	Equipment "jeu/equipment"
 	Firstdistrict "jeu/firstdistrict"
 )
 
@@ -24,15 +24,15 @@ func Class(nom string) Character {
 		// création du personnage en fonction du choix de l'utilisateur
 		switch choice {
 		case "1":
-			perso := Character{Name: nom, Health: 80, Vitesse: 75, Nameclass: "eclaireur", Strength: 15, Or: 100}
+			perso := Character{Name: nom, Health: 80, Vitesse: 75, Nameclass: "eclaireur", Strength: 15, Or: 100, Equipment: []Equipment.Equipment{Equipment.Basicsword, Equipment.Basicpropulsor, Equipment.Grappling}}
 			perso.Displayinfo()
 			Firstdistrict.StartingPoint()
 		case "2":
-			perso := Character{Name: nom, Health: 100, Vitesse: 50, Nameclass: "soldat", Strength: 20, Or: 100}
+			perso := Character{Name: nom, Health: 100, Vitesse: 50, Nameclass: "soldat", Strength: 20, Or: 100, Equipment: []Equipment.Equipment{Equipment.Basicsword, Equipment.Basicpropulsor, Equipment.Grappling}}
 			perso.Displayinfo()
 			Firstdistrict.StartingPoint()
 		case "3":
-			perso := Character{Name: nom, Health: 120, Vitesse: 50, Nameclass: "medic", Strength: 15, Or: 100}
+			perso := Character{Name: nom, Health: 120, Vitesse: 50, Nameclass: "medic", Strength: 15, Or: 100, Equipment: []Equipment.Equipment{Equipment.Basicsword, Equipment.Basicpropulsor, Equipment.Grappling}}
 			perso.Displayinfo()
 			Firstdistrict.StartingPoint()
 		default:
@@ -46,4 +46,11 @@ func CreateCharacter() Character {
 	perso := Class(nom)
 	perso.Displayinfo()
 	return perso
+}
+
+func (c *Character) Equip(e Equipment.Equipment) {
+	c.Equipment = append(c.Equipment, e)
+	c.Health += e.Healthbonus
+	c.Vitesse += e.Speedbonus
+	c.Strength += e.Damagebonus
 }

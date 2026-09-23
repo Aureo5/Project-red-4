@@ -1,5 +1,3 @@
 package jeu
 
-func NewBearProp() Equipment {
-	return Equipment{ID: "bear_prop", Name: "Propulseur d'ours", Gaz: 100, Healthbonus: 130}
-}
+var Bearprop = Equipment{ID: "bear_prop", Name: "Propulseur d'ours", Gaz: 100, Healthbonus: 130}
