@@ -44,14 +44,14 @@ func Choicefirstdistrict(perso *char.Character) {
 			jeu.Choicecamp(perso)
 		case "2":
 			fmt.Println("Bienvenue sur le champ de bataille ! Sois prudent, les géants peuvent être plus dangereux que tu ne le penses...")
-			fight.StartFight(perso)
+			fight.StartFight(perso, &ennemy.Giant)
+
 		case "3":
 			fmt.Println("Attention ! Un titan gueule de loup protège le prochain mur, affronte le avant d'accéder au prochain district !")
+			fight.StartFight(perso, &ennemy.Wolftitan)
 			return
 		case "4":
-			char.Displayinfo(*perso)
-			char.DisplayEquip(*perso)
-			char.DisplayInv(*perso)
+			perso.DisplayCharacterMenu()
 
 		default:
 			fmt.Println("Choix invalide, réessaie.")

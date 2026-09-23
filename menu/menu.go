@@ -23,7 +23,7 @@ func Menu() {
 		lore.Lore()
 	case 2:
 		if perso.Name == "" {
-			fmt.Println("Lancer la partie pour créer votre personnage")
+			fmt.Println("\nLancer la partie pour créer votre personnage")
 			Menu()
 		} else {
 			character.Displayinfo(perso)

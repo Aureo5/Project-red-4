@@ -9,7 +9,7 @@ import (
 
 func Merchant() {
 
-	texte := "\nBonjour jeune aventurier ! Bienvenur dans mon magasin, qu'est-ce qu'il te ferais plaisir ?"
+	texte := "\nBonjour jeune aventurier ! Bienvenue dans mon magasin, qu'est-ce qu'il te ferais plaisir ?"
 
 	for _, lettre := range texte {
 		fmt.Printf("%c", lettre)
