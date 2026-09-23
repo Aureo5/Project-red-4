@@ -31,6 +31,7 @@ func Menu() {
 		}
 	case 3:
 		inventaire.DisplayInv(perso)
+		inventaire.DisplayEquip(perso)
 		Menu()
 	case 4:
 		os.Exit(0)

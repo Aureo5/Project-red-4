@@ -15,3 +15,14 @@ func DisplayInv(c character.Character) {
 		fmt.Printf("- %s (x%d) : %.2f gold\n", item.Nom, item.Quantity, item.Prix)
 	}
 }
+
+func DisplayEquip(c character.Character) {
+	if len(c.Equipment) == 0 {
+		fmt.Println("Votre inventaire d'équipement est vide.")
+		return
+	}
+	fmt.Println("--- Equipement ---")
+	for _, item := range c.Equipment {
+		fmt.Printf("Lame: %s \n", item.Name)
+	}
+}

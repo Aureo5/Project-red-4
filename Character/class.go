@@ -2,6 +2,7 @@ package jeu
 
 import (
 	"fmt"
+	Equipement "jeu/equipement"
 	Firstdistrict "jeu/firstdistrict"
 )
 
