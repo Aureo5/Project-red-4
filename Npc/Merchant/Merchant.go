@@ -21,7 +21,7 @@ func Merchant() {
 func ChoiceMerchant(perso *char.Character) {
 	var choice string
 	for {
-		fmt.Println("\n1. Seringues de combat (+46% dgt/tour sur 2tour) -> 55or ")
+		fmt.Println("\n1. Seringues de combat (+46% dgt/tour sur 2 tour) -> 55 or ")
 		fmt.Println("\n2. Seringues de soin (+50PV instantanément) -> 45 or ")
 		fmt.Println("\n3. Grenade incendiaires (-10%PV créatures/tour sur 3 tour) -> 40 or")
 		fmt.Println("\n4. Quitter")
