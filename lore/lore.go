@@ -1,8 +1,8 @@
-package jeu
+package lore
 
 import (
 	"fmt"
-	CreateCharacter "jeu/Character"
+	CreateCharacter "jeu/Character/class"
 	"time"
 )
 

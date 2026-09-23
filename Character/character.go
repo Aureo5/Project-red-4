@@ -1,4 +1,4 @@
-package jeu
+package character
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ type Character struct {
 	Strength   int
 	Or         int
 	Inventory  []item.Item
-	Equipment  []equip.Equipment
+	Equipment  map[string]equip.Equipment
 }
 
 func Maj(nom string) bool {

@@ -1,4 +1,4 @@
-package jeu
+package item
 
 type Item struct {
 	ID       string

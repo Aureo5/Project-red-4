@@ -1,9 +1,8 @@
-package jeu
+package menu
 
 import (
 	"fmt"
 	character "jeu/Character"
-	inventaire "jeu/inventory"
 	lore "jeu/lore"
 	"os"
 )
@@ -30,8 +29,8 @@ func Menu() {
 			perso.Displayinfo()
 		}
 	case 3:
-		inventaire.DisplayInv(perso)
-		inventaire.DisplayEquip(perso)
+		character.DisplayInv(perso)
+		character.DisplayEquip(perso)
 		Menu()
 	case 4:
 		os.Exit(0)

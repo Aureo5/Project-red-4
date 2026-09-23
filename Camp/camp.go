@@ -2,11 +2,12 @@ package jeu
 
 import (
 	"fmt"
+	char "jeu/Character"
 	Blacksmith "jeu/Npc/Blacksmith"
 	Merchant "jeu/Npc/Merchant"
 )
 
-func Choicecamp() {
+func Choicecamp(perso *char.Character) {
 	var choix string
 
 	for {
@@ -20,6 +21,7 @@ func Choicecamp() {
 		switch choix {
 		case "1":
 			Merchant.Merchant()
+			Merchant.ChoiceMerchant(perso)
 			return
 		case "2":
 			Blacksmith.Blacksmith()
