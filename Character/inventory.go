@@ -1,11 +1,10 @@
-package jeu
+package character
 
 import (
 	"fmt"
-	character "jeu/Character"
 )
 
-func DisplayInv(c character.Character) {
+func DisplayInv(c Character) {
 	if len(c.Inventory) == 0 {
 		fmt.Println("Votre inventaire est vide.")
 		return
@@ -16,7 +15,7 @@ func DisplayInv(c character.Character) {
 	}
 }
 
-func DisplayEquip(c character.Character) {
+func DisplayEquip(c Character) {
 	if len(c.Equipment) == 0 {
 		fmt.Println("Votre inventaire d'équipement est vide.")
 		return

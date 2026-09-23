@@ -1,4 +1,4 @@
-package jeu
+package character
 
 import (
 	"fmt"
@@ -9,13 +9,13 @@ import (
 type Character struct {
 	Name       string
 	Health     int
-	Initiative int
+	Vitesse    int
 	Experience int
 	Nameclass  string
 	Strength   int
 	Or         int
 	Inventory  []item.Item
-	Equipment  []equip.Equipment
+	Equipment  map[string]equip.Equipment
 }
 
 func Maj(nom string) bool {
@@ -58,8 +58,51 @@ func (c Character) Displayinfo() {
 	fmt.Printf("Classe     : %s\n", c.Nameclass)
 	fmt.Printf("Vie        : %d\n", c.Health)
 	fmt.Printf("Force      : %d\n", c.Strength)
-	fmt.Printf("Initiative    : %d\n", c.Initiative)
+	fmt.Printf("Vitesse    : %d\n", c.Vitesse)
 	fmt.Printf("Expérience : %d\n", c.Experience)
 	fmt.Printf("Or         : %d\n", c.Or)
 	fmt.Println("======================================")
+}
+func (c *Character) HasResource(id string, qty int) bool {
+	for _, it := range c.Inventory {
+		if it.ID == id {
+			return it.Quantity >= qty
+		}
+	}
+	return false
+}
+
+func (c *Character) ConsumeResource(id string, qty int) {
+	for i, it := range c.Inventory {
+		if it.ID == id {
+			c.Inventory[i].Quantity -= qty
+			return
+		}
+	}
+}
+
+func (c *Character) Upgrade(key string, peauCost, osCost, orCost int, apply func(*equip.Equipment)) bool {
+	if !c.HasResource("Skin", peauCost) {
+		fmt.Println("Pas assez de peau pour cette amélioration.")
+		return false
+	}
+	if !c.HasResource("bone", osCost) {
+		fmt.Println("Pas assez d'os pour cette amélioration.")
+		return false
+	}
+	if c.Or < orCost {
+		fmt.Println("Pas assez d'or pour cette amélioration.")
+		return false
+	}
+
+	c.ConsumeResource("Skin", peauCost)
+	c.ConsumeResource("bone", osCost)
+	c.Or -= orCost
+
+	eq := c.Equipment[key]
+	apply(&eq)
+	c.Equipment[key] = eq
+
+	fmt.Printf("%s amélioré avec succès !\n", eq.Name)
+	return true
 }

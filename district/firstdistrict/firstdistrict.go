@@ -1,12 +1,13 @@
-package jeu
+package district
 
 import (
 	"fmt"
 	"jeu/Camp"
+	char "jeu/Character"
 	"time"
 )
 
-func StartingPoint() {
+func StartingPoint(perso *char.Character) {
 	texteun := "\nUn titan colossale est apparue derrière le mur Arès et a créé une ouverture pour ses confrères !\nIl est de votre devoir de sauver les habitants tout en éliminant ces immondices. \nEn avant soldat !\n"
 	for _, lettre := range texteun {
 		fmt.Printf("%c", lettre)
@@ -21,29 +22,34 @@ func StartingPoint() {
 	}
 	fmt.Println()
 
-	Choicefirstdistrict()
+	Choicefirstdistrict(perso)
 }
 
-func Choicefirstdistrict() {
+func Choicefirstdistrict(perso *char.Character) {
 	var choix string
 
 	for {
 		fmt.Println("\n1. Allez au camp")
 		fmt.Println("2. Combattre les géants")
 		fmt.Println("3. Accéder au prochain district")
+		fmt.Println("4. Inventaire")
 		fmt.Print("Ton choix : ")
 		fmt.Scan(&choix)
 
 		switch choix {
 		case "1":
 			fmt.Println("\nBienvenue au camp ! Ici tu pourras acheter des objets et sauvegarder ta partie !")
-			jeu.Choicecamp()
+			jeu.Choicecamp(perso)
 		case "2":
 			fmt.Println("Bienvenue sur le champ de bataille ! Sois prudent, les géants peuvent être plus dangereux que tu ne le penses...")
 			return
 		case "3":
 			fmt.Println("Attention ! Un titan gueule de loup protège le prochain mur, affronte le avant d'accéder au prochain district !")
 			return
+		case "4":
+			char.DisplayEquip(*perso)
+			char.DisplayInv(*perso)
+
 		default:
 			fmt.Println("Choix invalide, réessaie.")
 		}

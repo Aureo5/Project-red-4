@@ -1,7 +1,8 @@
-package jeu
+package Npc
 
 import (
 	"fmt"
+	char "jeu/Character"
 	item "jeu/item"
 	"time"
 )
@@ -17,7 +18,7 @@ func Merchant() {
 	fmt.Println()
 
 }
-func ChoiceMerchant(perso) {
+func ChoiceMerchant(perso *char.Character) {
 	var choice string
 	for {
 		fmt.Println("\n1. Seringues de combat (+46% dgt/tour sur 2tour) -> 55or ")
