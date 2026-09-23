@@ -23,7 +23,7 @@ func ChoiceMerchant(perso *char.Character) {
 	for {
 		fmt.Println("\n1. Seringues de combat (+46% dgt/tour sur 2tour) -> 55or ")
 		fmt.Println("\n2. Seringues de soin (+50PV instantanément) -> 45 or ")
-		fmt.Println("\n3. Grenade incendiaires (-10%PV créatures/tour sur 3 tour)")
+		fmt.Println("\n3. Grenade incendiaires (-10%PV créatures/tour sur 3 tour) -> 40 or")
 		fmt.Println("\n4. Quitter")
 		fmt.Print("Ton choix (1/2/3/4) : ")
 		fmt.Scan(&choice)

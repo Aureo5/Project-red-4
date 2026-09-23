@@ -26,7 +26,7 @@ func Menu() {
 			fmt.Println("Lancer la partie pour créer votre personnage")
 			Menu()
 		} else {
-			perso.Displayinfo()
+			character.Displayinfo(perso)
 		}
 	case 3:
 		character.DisplayInv(perso)

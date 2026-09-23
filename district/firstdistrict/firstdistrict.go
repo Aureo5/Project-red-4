@@ -47,6 +47,7 @@ func Choicefirstdistrict(perso *char.Character) {
 			fmt.Println("Attention ! Un titan gueule de loup protège le prochain mur, affronte le avant d'accéder au prochain district !")
 			return
 		case "4":
+			char.Displayinfo(*perso)
 			char.DisplayEquip(*perso)
 			char.DisplayInv(*perso)
 

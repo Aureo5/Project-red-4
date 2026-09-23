@@ -52,14 +52,3 @@ func Name() string {
 		fmt.Println("Nom invalide, réessaie.")
 	}
 }
-func (c Character) Displayinfo() {
-	fmt.Println("\n===Informations sur le personnage=== ")
-	fmt.Printf("Nom        : %s\n", c.Name)
-	fmt.Printf("Classe     : %s\n", c.Nameclass)
-	fmt.Printf("Vie        : %d\n", c.Health)
-	fmt.Printf("Force      : %d\n", c.Strength)
-	fmt.Printf("Vitesse    : %d\n", c.Vitesse)
-	fmt.Printf("Expérience : %d\n", c.Experience)
-	fmt.Printf("Or         : %d\n", c.Or)
-	fmt.Println("======================================")
-}

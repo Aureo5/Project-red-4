@@ -5,7 +5,7 @@ import (
 	item "jeu/item"
 )
 
-func (c Character) AddItem(i item.Item) {
+func (c *Character) AddItem(i item.Item) {
 	for idx, objet := range c.Inventory {
 		if objet.ID == i.ID {
 			c.Inventory[idx].Quantity += i.Quantity
@@ -16,7 +16,7 @@ func (c Character) AddItem(i item.Item) {
 }
 
 // Buy vérifie l'or disponible, le déduit, et ajoute l'item à l'inventaire
-func (c Character) Buy(i item.Item) {
+func (c *Character) Buy(i item.Item) {
 	coutTotal := i.Prix * float64(i.Quantity)
 
 	if float64(c.Or) < coutTotal {
