@@ -20,6 +20,7 @@ type Character struct {
 	MaxWeight      float64
 	Equipment      map[string]equip.Equipment
 	SkillCooldowns map[string]int
+	Unlock         bool
 
 	BurnTurns   int
 	DamageBoost int

@@ -40,8 +40,11 @@ func Choiceseconddistrict(perso *chara.Character) {
 			fight.LaunchRandomFight(perso)
 		case "3":
 			fmt.Println("Attention ! Un Géant Ursadon protège le prochain mur, affronte le avant d'accéder au prochain district !")
-			fight.StartFight(perso, &ennemy.Beartitan)
-			last.LastPoint(perso)
+			fight.BossFight(perso, &ennemy.Beartitan)
+			if perso.Unlock {
+				perso.Unlock = false
+				last.LastPoint(perso)
+			}
 		case "4":
 			perso.DisplayCharacterMenu()
 		default:

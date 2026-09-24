@@ -49,8 +49,12 @@ func Choicefirstdistrict(perso *char.Character) {
 
 		case "3":
 			fmt.Println("Attention ! Un titan gueule de loup protège le prochain mur, affronte le avant d'accéder au prochain district !")
-			fight.StartFight(perso, &ennemy.Wolftitan)
-			second.SecondPoint(perso)
+			fight.BossFight(perso, &ennemy.Wolftitan)
+			if perso.Unlock {
+				perso.Unlock = false
+				second.SecondPoint(perso)
+			}
+
 		case "4":
 			perso.DisplayCharacterMenu()
 

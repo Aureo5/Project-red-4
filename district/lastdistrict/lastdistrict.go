@@ -40,8 +40,11 @@ func Choicelastdistrict(perso *chara.Character) {
 			fight.StartFight(perso, &ennemy.Coloss)
 		case "3":
 			fmt.Println("Attention ! Le titant colossal est apparu ! élimine-le afin de libérer le district et terminée l'invasion.")
-			fight.StartFight(perso, &ennemy.Colossaletitan)
-			end.Endgame(perso)
+			fight.BossFight(perso, &ennemy.Colossaletitan)
+			if perso.Unlock {
+				perso.Unlock = false
+				end.Endgame(perso)
+			}
 		case "4":
 			perso.DisplayCharacterMenu()
 		default:
