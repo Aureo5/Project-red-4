@@ -5,6 +5,7 @@ import (
 	"jeu/Camp"
 	chara "jeu/Character"
 	ennemy "jeu/Npc/Ennemy"
+	last "jeu/district/lastdistrict"
 	"jeu/fight"
 	"time"
 )
@@ -40,6 +41,7 @@ func Choiceseconddistrict(perso *chara.Character) {
 		case "3":
 			fmt.Println("Attention ! Un Géant Ursadon protège le prochain mur, affronte le avant d'accéder au prochain district !")
 			fight.StartFight(perso, &ennemy.Beartitan)
+			last.LastPoint(perso)
 		case "4":
 			perso.DisplayCharacterMenu()
 		default:
