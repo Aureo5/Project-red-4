@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"jeu/Camp"
 	chara "jeu/Character"
+	ennemy "jeu/Npc/Ennemy"
+	last "jeu/district/lastdistrict"
+	"jeu/fight"
 	"time"
 )
 
@@ -33,9 +36,14 @@ func Choiceseconddistrict(perso *chara.Character) {
 			fmt.Println("\nBienvenue au camp ! Ici tu pourras acheter des objets et sauvegarder ta partie !")
 			jeu.Choiceseccamp(perso)
 		case "2":
+			fmt.Println("Des grondements de pas raisonnent de partout...")
+			fight.LaunchRandomFight(perso)
 		case "3":
+			fmt.Println("Attention ! Un Géant Ursadon protège le prochain mur, affronte le avant d'accéder au prochain district !")
+			fight.StartFight(perso, &ennemy.Beartitan)
+			last.LastPoint(perso)
 		case "4":
-
+			perso.DisplayCharacterMenu()
 		default:
 			fmt.Println("Choix invalide, réessaie.")
 		}

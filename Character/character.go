@@ -7,18 +7,19 @@ import (
 )
 
 type Character struct {
-	Name       string
-	Health     int
-	Vitesse    int
-	Experience int
-	Level      int
-	XPValue    int
-	Nameclass  string
-	Strength   int
-	Or         int
-	Inventory  []item.Item
-	MaxWeight  float64
-	Equipment  map[string]equip.Equipment
+	Name           string
+	Health         int
+	Vitesse        int
+	Experience     int
+	Level          int
+	XPValue        int
+	Nameclass      string
+	Strength       int
+	Or             int
+	Inventory      []item.Item
+	MaxWeight      float64
+	Equipment      map[string]equip.Equipment
+	SkillCooldowns map[string]int
 }
 
 func Maj(nom string) bool {

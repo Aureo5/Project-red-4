@@ -4,6 +4,7 @@ import (
 	"fmt"
 	character "jeu/Character"
 	"jeu/Npc/Ennemy"
+	"jeu/skill"
 )
 
 func StartFight(perso *character.Character, mob *character.Character) {
@@ -18,10 +19,12 @@ func StartFight(perso *character.Character, mob *character.Character) {
 		fmt.Println("1. Attaquer")
 		fmt.Println("2. Ouvrir l'inventaire")
 		fmt.Println("3. Fuir")
+		fmt.Println("4. Compétence spéciale")
 
 		var choix string
 		fmt.Print("Action : ")
 		fmt.Scan(&choix)
+		actionUtilisee := true
 
 		switch choix {
 		case "1":
@@ -36,6 +39,9 @@ func StartFight(perso *character.Character, mob *character.Character) {
 			fmt.Println("Vous avez pris la fuite !")
 			return
 
+		case "4":
+			actionUtilisee = skill.UseSkill(perso, mob)
+
 		default:
 			fmt.Println("Choix invalide, vous passez votre tour !")
 		}
@@ -46,6 +52,10 @@ func StartFight(perso *character.Character, mob *character.Character) {
 			perso.Health = saveperso
 			mob.Health = save
 			return
+		}
+
+		if actionUtilisee {
+			skill.TickCooldowns(perso)
 		}
 
 		fmt.Printf("\nTour de %s...\n", mob.Name)

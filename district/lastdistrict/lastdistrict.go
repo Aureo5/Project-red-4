@@ -5,12 +5,13 @@ import (
 	jeu "jeu/Camp"
 	chara "jeu/Character"
 	ennemy "jeu/Npc/Ennemy"
+	end "jeu/district/endgame"
 	"jeu/fight"
 	"time"
 )
 
-func SecondPoint(perso *chara.Character) {
-	texte := "\n ====Mission 3==== \nBienvenue dans le district d'Athènes ! \nMerci d'avoir libérez les murs Hermes ! Les colosses ont envahi ce district mais ils protègent leur maître, éliminés les afin de libérer le pays d'Osnos de ce cauchemar !"
+func LastPoint(perso *chara.Character) {
+	texte := "\n ====Mission 3==== \nBienvenue dans le district d'Athènes ! \nMerci d'avoir libérez les murs Hermes ! Les colosses ont envahi ce district mais ils protègent quelque chose de mystérieux... éliminés les afin de libérer le pays d'Osnos de ce cauchemar !"
 
 	for _, lettre := range texte {
 		fmt.Printf("%c", lettre)
@@ -32,14 +33,15 @@ func Choicelastdistrict(perso *chara.Character) {
 
 		switch choix {
 		case "1":
-			fmt.Println("\nBienvenue au camp ! Ici tu pourras acheter des objets et sauvegarder ta partie !")
+			fmt.Println("\nBienvenue au camp ! Ici tu pourras acheter des objets.")
 			jeu.Choicelastcamp(perso)
 		case "2":
-			fmt.Println("Bienvenue sur le champ de bataille ! Sois prudent, les géants peuvent être plus dangereux que tu ne le penses...")
+			fmt.Println("Les Colosses ont l'ai de protéger quelque chose...")
 			fight.StartFight(perso, &ennemy.Coloss)
 		case "3":
-			fmt.Println("Attention ! Un titan gueule de loup protège le prochain mur, affronte le avant d'accéder au prochain district !")
+			fmt.Println("Attention ! Le titant colossal est apparu ! élimine-le afin de libérer le district.")
 			fight.StartFight(perso, &ennemy.Colossaletitan)
+			end.Endgame(perso)
 		case "4":
 			perso.DisplayCharacterMenu()
 		default:
