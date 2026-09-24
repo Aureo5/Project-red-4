@@ -10,8 +10,7 @@ func (c *Character) DisplayCharacterMenu() {
 		fmt.Println("\n=== GESTION DU PERSONNAGE ===")
 		fmt.Println("1. Voir les informations du personnage")
 		fmt.Println("2. Voir les équipements équipés")
-		fmt.Println("3. Changer d'équipement (depuis l'inventaire)")
-		fmt.Println("4. Voir tout l'inventaire")
+		fmt.Println("3. Voir tout l'inventaire")
 		fmt.Println("0. Retour au jeu")
 
 		var choix string
@@ -24,8 +23,6 @@ func (c *Character) DisplayCharacterMenu() {
 		case "2":
 			c.DisplayEquipment()
 		case "3":
-			c.EquipFromInventory()
-		case "4":
 			c.DisplayFullInventory()
 		case "0":
 			return
