@@ -7,7 +7,6 @@ import (
 )
 
 func LaunchRandomFight(perso *character.Character) {
-	// Tirage d'un nombre : 0 ou 1
 	randomChoice := rand.Intn(2)
 
 	var currentMob *character.Character
@@ -18,6 +17,5 @@ func LaunchRandomFight(perso *character.Character) {
 		currentMob = &ennemy.Beartitan
 	}
 
-	// Lancement du combat avec l'ennemi sélectionné
 	StartFight(perso, currentMob)
 }

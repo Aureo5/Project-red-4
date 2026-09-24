@@ -39,7 +39,7 @@ func (c *Character) FightInventory() {
 	itemChoisi := c.Inventory[targetIndex]
 
 	switch itemChoisi.Nom {
-	case "Potion de soin", "Heal Syringe":
+	case "Seringue de soin":
 		soin := 50
 		c.Health += soin
 		fmt.Printf("Vous utilisez %s et récupérez %d PV ! (PV actuels : %d)\n", itemChoisi.Nom, soin, c.Health)
@@ -52,7 +52,7 @@ func (c *Character) FightInventory() {
 
 func estConsommable(nom string) bool {
 	switch nom {
-	case "Potion de soin", "Heal Syringe":
+	case "Seringue de soin":
 		return true
 	default:
 		return false
