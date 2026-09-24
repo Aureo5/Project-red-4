@@ -23,21 +23,21 @@ func Class(nom string) char.Character {
 
 		switch choice {
 		case "1":
-			perso := char.Character{Name: nom, Health: 80, Vitesse: 75, Nameclass: "eclaireur", Strength: 15, Or: 100, Level: 1}
+			perso := char.Character{Name: nom, Health: 80, Vitesse: 75, Nameclass: "eclaireur", Strength: 15, Or: 100, MaxWeight: 5, Level: 1}
 			char.Equip(&perso, "lame", Equipment.Basicsword)
 			char.Equip(&perso, "grappin", Equipment.Grappling)
 			char.Equip(&perso, "propulseur", Equipment.Basicpropulsor)
 			char.Displayinfo(perso)
 			Firstdistrict.StartingPoint(&perso)
 		case "2":
-			perso := char.Character{Name: nom, Health: 100, Vitesse: 50, Nameclass: "soldat", Strength: 20, Or: 100, Level: 1}
+			perso := char.Character{Name: nom, Health: 100, Vitesse: 50, Nameclass: "soldat", Strength: 20, Or: 100, MaxWeight: 5, Level: 1}
 			char.Equip(&perso, "lame", Equipment.Basicsword)
 			char.Equip(&perso, "grappin", Equipment.Grappling)
 			char.Equip(&perso, "propulseur", Equipment.Basicpropulsor)
 			char.Displayinfo(perso)
 			Firstdistrict.StartingPoint(&perso)
 		case "3":
-			perso := char.Character{Name: nom, Health: 120, Vitesse: 50, Nameclass: "medic", Strength: 15, Or: 100, Level: 1}
+			perso := char.Character{Name: nom, Health: 120, Vitesse: 50, Nameclass: "medic", Strength: 15, Or: 100, MaxWeight: 5, Level: 1}
 			char.Equip(&perso, "lame", Equipment.Basicsword)
 			char.Equip(&perso, "grappin", Equipment.Grappling)
 			char.Equip(&perso, "propulseur", Equipment.Basicpropulsor)
@@ -49,7 +49,6 @@ func Class(nom string) char.Character {
 	}
 }
 func CreateCharacter() char.Character {
-	// création du personnage
 	nom := char.Name()
 	perso := Class(nom)
 	char.Displayinfo(perso)

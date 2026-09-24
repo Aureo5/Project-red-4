@@ -17,6 +17,7 @@ type Character struct {
 	Strength   int
 	Or         int
 	Inventory  []item.Item
+	MaxWeight  float64
 	Equipment  map[string]equip.Equipment
 }
 

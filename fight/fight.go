@@ -8,7 +8,8 @@ import (
 
 func StartFight(perso *character.Character, mob *character.Character) {
 	fmt.Printf("\nUN COMBAT COMMENCE CONTRE : %s (PV: %d) ⚔️\n", mob.Name, mob.Health)
-
+	save := mob.Health
+	saveperso := perso.Health
 	tour := 1
 
 	for perso.Health > 0 && mob.Health > 0 {
@@ -42,6 +43,8 @@ func StartFight(perso *character.Character, mob *character.Character) {
 		if mob.Health <= 0 {
 			fmt.Printf("\nVous avez vaincu %s !\n", mob.Name)
 			ennemy.GiveLoot(perso, *mob)
+			perso.Health = saveperso
+			mob.Health = save
 			return
 		}
 
@@ -50,7 +53,9 @@ func StartFight(perso *character.Character, mob *character.Character) {
 		fmt.Printf(" %s vous inflige %d dégâts !\n", mob.Name, mob.Strength)
 
 		if perso.Health <= 0 {
-			fmt.Println("\nVous avez été vaincu... Game Over.")
+			fmt.Println("\nVous avez été vaincu...")
+			perso.Health = saveperso
+			mob.Health = save
 			return
 		}
 

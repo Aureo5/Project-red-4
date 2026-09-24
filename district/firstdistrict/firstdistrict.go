@@ -2,10 +2,11 @@ package district
 
 import (
 	"fmt"
-	jeu "jeu/Camp"
+	"jeu/Camp"
 	char "jeu/Character"
 	ennemy "jeu/Npc/Ennemy"
-	"jeu/fight"
+	second "jeu/district/seconddistrict"
+	fight "jeu/fight"
 	"time"
 )
 
@@ -48,6 +49,7 @@ func Choicefirstdistrict(perso *char.Character) {
 		case "3":
 			fmt.Println("Attention ! Un titan gueule de loup protège le prochain mur, affronte le avant d'accéder au prochain district !")
 			fight.StartFight(perso, &ennemy.Wolftitan)
+			second.SecondPoint(perso)
 		case "4":
 			perso.DisplayCharacterMenu()
 

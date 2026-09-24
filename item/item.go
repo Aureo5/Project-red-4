@@ -5,4 +5,5 @@ type Item struct {
 	Nom      string
 	Prix     float64
 	Quantity int
+	Weight   float64
 }
