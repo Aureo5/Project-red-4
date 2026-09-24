@@ -18,7 +18,7 @@ func LastPoint(perso *chara.Character) {
 		time.Sleep(20 * time.Millisecond)
 	}
 	fmt.Println()
-
+	Choicelastdistrict(perso)
 }
 func Choicelastdistrict(perso *chara.Character) {
 	var choix string

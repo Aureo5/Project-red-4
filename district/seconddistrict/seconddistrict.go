@@ -19,6 +19,7 @@ func SecondPoint(perso *chara.Character) {
 	}
 	fmt.Println()
 
+	Choiceseconddistrict(perso)
 }
 func Choiceseconddistrict(perso *chara.Character) {
 	var choix string

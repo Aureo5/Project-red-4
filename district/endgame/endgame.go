@@ -15,12 +15,14 @@ func Endgame(perso *chara.Character) {
 		time.Sleep(20 * time.Millisecond)
 	}
 	fmt.Println()
+
+	Choiceendgame(perso)
 }
 func Choiceendgame(perso *chara.Character) {
 	var choix string
 
 	for {
-		fmt.Println("\n1. Qui sont-ils ?")
+		fmt.Println("\n1. Crédit")
 		fmt.Println("2. Quitter le jeu")
 		fmt.Print("Ton choix : ")
 		fmt.Scan(&choix)
