@@ -29,16 +29,16 @@ func ChoiceSecblacksmith(perso *char.Character) {
 
 		switch choice {
 		case "1":
-			perso.Upgrade("Propulsor", 0, 5, 45, func(e *equip.Equipment) {
+			perso.UpgradeSpecial("Propulsor", "wolf_skin", "peau de loup", 1, 0, 5, 45, func(e *equip.Equipment) {
 				e.Healthbonus += 25
 			})
 		case "2":
-			perso.Upgrade("Grapplin", 3, 2, 30, func(e *equip.Equipment) {
+			perso.UpgradeSpecial("Grapplin", "wolf_skin", "peau de loup", 1, 3, 3, 30, func(e *equip.Equipment) {
 				e.Healthbonus += 10
 				e.Damagebonus += 10
 			})
 		case "3":
-			perso.Upgrade("Lame", 5, 0, 60, func(e *equip.Equipment) {
+			perso.UpgradeSpecial("Lame", "wolf_skin", "peau de loup", 1, 5, 0, 60, func(e *equip.Equipment) {
 				e.Damagebonus += 20
 			})
 		case "4":

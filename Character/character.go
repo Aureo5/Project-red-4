@@ -99,13 +99,44 @@ func (c *Character) Upgrade(key string, peauCost, osCost, orCost int, apply func
 	return true
 }
 
+func (c *Character) UpgradeSpecial(key string, specialID string, specialNom string, specialQty int, peauCost, osCost, orCost int, apply func(*equip.Equipment)) bool {
+	if !c.HasResource(specialID, specialQty) {
+		fmt.Printf("Pas assez de %s pour cette amélioration.\n", specialNom)
+		return false
+	}
+	if !c.HasResource("Skin", peauCost) {
+		fmt.Println("Pas assez de peau pour cette amélioration.")
+		return false
+	}
+	if !c.HasResource("bone", osCost) {
+		fmt.Println("Pas assez d'os pour cette amélioration.")
+		return false
+	}
+	if c.Or < orCost {
+		fmt.Println("Pas assez d'or pour cette amélioration.")
+		return false
+	}
+
+	c.ConsumeResource(specialID, specialQty)
+	c.ConsumeResource("Skin", peauCost)
+	c.ConsumeResource("bone", osCost)
+	c.Or -= orCost
+
+	eq := c.Equipment[key]
+	apply(&eq)
+	c.Equipment[key] = eq
+
+	fmt.Printf("%s amélioré avec succès !\n", eq.Name)
+	return true
+}
+
 func (c *Character) GiveXP(amount int) {
 	if c.Level == 0 {
 		c.Level = 1
 	}
 
 	c.Experience += amount
-	fmt.Printf("✨ Vous gagnez %d XP ! (%d/%d)\n", amount, c.Experience, c.Level*100)
+	fmt.Printf(" Vous gagnez %d XP ! (%d/%d)\n", amount, c.Experience, c.Level*100)
 
 	for c.Experience >= c.Level*100 {
 		c.Experience -= c.Level * 100

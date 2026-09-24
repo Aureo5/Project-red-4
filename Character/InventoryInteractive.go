@@ -4,7 +4,6 @@ import (
 	"fmt"
 )
 
-// À utiliser hors combat uniquement
 func (c *Character) DisplayCharacterMenu() {
 	for {
 		fmt.Println("\n=== GESTION DU PERSONNAGE ===")

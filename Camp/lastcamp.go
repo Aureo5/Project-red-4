@@ -3,19 +3,19 @@ package jeu
 import (
 	"fmt"
 	char "jeu/Character"
+	Blacksmith "jeu/Npc/Lastblacksmith"
 	Merchant "jeu/Npc/Merchant"
-	Blacksmith "jeu/Npc/Secblacksmith"
 	"os"
 )
 
-func Choiceseccamp(perso *char.Character) {
+func Choicelastcamp(perso *char.Character) {
 	var choix string
 
 	for {
 		fmt.Println("\n===que veux-tu faire?=== ")
 		fmt.Println("\n1. Voir le marchand")
 		fmt.Println("2. Voir le forgeron")
-		fmt.Println("3. Quitter le jeu")
+		fmt.Println("3.Quitter le jeu")
 		fmt.Print("Ton choix : ")
 		fmt.Scan(&choix)
 
@@ -25,7 +25,7 @@ func Choiceseccamp(perso *char.Character) {
 			Merchant.ChoiceMerchant(perso)
 			return
 		case "2":
-			Blacksmith.Secblacksmith()
+			Blacksmith.Lastblacksmith()
 			Blacksmith.ChoiceSecblacksmith(perso)
 			return
 		case "3":

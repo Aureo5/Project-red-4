@@ -7,7 +7,6 @@ import (
 	Equipment "jeu/equipment"
 )
 
-// différebntes classes de personnages avec leurs caractéristiques
 func Class(nom string) char.Character {
 	var choice string
 	for {
@@ -22,27 +21,26 @@ func Class(nom string) char.Character {
 		fmt.Print("Ton choix (1/2/3) : ")
 		fmt.Scan(&choice)
 
-		// création du personnage en fonction du choix de l'utilisateur
 		switch choice {
 		case "1":
 			perso := char.Character{Name: nom, Health: 80, Vitesse: 75, Nameclass: "eclaireur", Strength: 15, Or: 100, Level: 1}
-			Equip(&perso, "lame", Equipment.Basicsword)
-			Equip(&perso, "grappin", Equipment.Grappling)
-			Equip(&perso, "propulseur", Equipment.Basicpropulsor)
+			char.Equip(&perso, "lame", Equipment.Basicsword)
+			char.Equip(&perso, "grappin", Equipment.Grappling)
+			char.Equip(&perso, "propulseur", Equipment.Basicpropulsor)
 			char.Displayinfo(perso)
 			Firstdistrict.StartingPoint(&perso)
 		case "2":
 			perso := char.Character{Name: nom, Health: 100, Vitesse: 50, Nameclass: "soldat", Strength: 20, Or: 100, Level: 1}
-			Equip(&perso, "lame", Equipment.Basicsword)
-			Equip(&perso, "grappin", Equipment.Grappling)
-			Equip(&perso, "propulseur", Equipment.Basicpropulsor)
+			char.Equip(&perso, "lame", Equipment.Basicsword)
+			char.Equip(&perso, "grappin", Equipment.Grappling)
+			char.Equip(&perso, "propulseur", Equipment.Basicpropulsor)
 			char.Displayinfo(perso)
 			Firstdistrict.StartingPoint(&perso)
 		case "3":
 			perso := char.Character{Name: nom, Health: 120, Vitesse: 50, Nameclass: "medic", Strength: 15, Or: 100, Level: 1}
-			Equip(&perso, "lame", Equipment.Basicsword)
-			Equip(&perso, "grappin", Equipment.Grappling)
-			Equip(&perso, "propulseur", Equipment.Basicpropulsor)
+			char.Equip(&perso, "lame", Equipment.Basicsword)
+			char.Equip(&perso, "grappin", Equipment.Grappling)
+			char.Equip(&perso, "propulseur", Equipment.Basicpropulsor)
 			char.Displayinfo(perso)
 			Firstdistrict.StartingPoint(&perso)
 		default:
@@ -56,24 +54,4 @@ func CreateCharacter() char.Character {
 	perso := Class(nom)
 	char.Displayinfo(perso)
 	return perso
-}
-
-func Equip(c *char.Character, slot string, newEquip Equipment.Equipment) {
-	if c.Equipment == nil {
-		c.Equipment = make(map[string]Equipment.Equipment)
-	}
-
-	if currentEquip, exists := c.Equipment[slot]; exists {
-		c.Health -= currentEquip.Healthbonus
-		c.Vitesse -= currentEquip.Speedbonus
-		c.Strength -= currentEquip.Damagebonus
-		fmt.Printf("Vous avez retiré : %s\n", currentEquip.Name)
-	}
-
-	c.Equipment[slot] = newEquip
-	c.Health += newEquip.Healthbonus
-	c.Vitesse += newEquip.Speedbonus
-	c.Strength += newEquip.Damagebonus
-
-	fmt.Printf("Vous avez équipé : %s dans l'emplacement [%s] !\n", newEquip.Name, slot)
 }
