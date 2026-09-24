@@ -10,12 +10,14 @@ type Character struct {
 	Name       string
 	Health     int
 	Vitesse    int
-	Level      int
 	Experience int
+	Level      int
+	XPValue    int
 	Nameclass  string
 	Strength   int
 	Or         int
 	Inventory  []item.Item
+	MaxWeight  float64
 	Equipment  map[string]equip.Equipment
 }
 
@@ -96,4 +98,25 @@ func (c *Character) Upgrade(key string, peauCost, osCost, orCost int, apply func
 
 	fmt.Printf("%s amélioré avec succès !\n", eq.Name)
 	return true
+}
+
+func (c *Character) GiveXP(amount int) {
+	if c.Level == 0 {
+		c.Level = 1
+	}
+
+	c.Experience += amount
+	fmt.Printf("✨ Vous gagnez %d XP ! (%d/%d)\n", amount, c.Experience, c.Level*100)
+
+	for c.Experience >= c.Level*100 {
+		c.Experience -= c.Level * 100
+		c.LevelUp()
+	}
+}
+
+func (c *Character) LevelUp() {
+	c.Level++
+	c.Health += 10
+	c.Strength += 3
+	fmt.Printf("===NIVEAU SUPÉRIEUR=== \nVous êtes maintenant niveau %d ! (+20 PV max, +5 Force)\n", c.Level)
 }

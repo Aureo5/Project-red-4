@@ -15,8 +15,7 @@ func Choiceseccamp(perso *char.Character) {
 		fmt.Println("\n===que veux-tu faire?=== ")
 		fmt.Println("\n1. Voir le marchand")
 		fmt.Println("2. Voir le forgeron")
-		fmt.Println("3. Sauvegarder la partie")
-		fmt.Println("4.Quitter le jeu")
+		fmt.Println("3.Quitter le jeu")
 		fmt.Print("Ton choix : ")
 		fmt.Scan(&choix)
 
@@ -30,8 +29,6 @@ func Choiceseccamp(perso *char.Character) {
 			Blacksmith.ChoiceSecblacksmith(perso)
 			return
 		case "3":
-			return
-		case "4":
 			os.Exit(0)
 		default:
 			fmt.Println("Choix invalide, réessaie.")

@@ -14,7 +14,7 @@ func LaunchRandomFight(perso *character.Character) {
 	if randomChoice == 0 {
 		currentMob = &ennemy.Giant
 	} else {
-		currentMob = &ennemy.Beartitan
+		currentMob = &ennemy.Coloss
 	}
 
 	StartFight(perso, currentMob)

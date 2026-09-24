@@ -2,6 +2,7 @@ package character
 
 import (
 	"fmt"
+	char "jeu/character"
 )
 
 // À utiliser hors combat uniquement
@@ -53,6 +54,7 @@ func (c *Character) DisplayFullInventory() {
 		fmt.Println("Votre inventaire est vide.")
 		return
 	}
+	fmt.Println("%skg / %dkg", c.GetCurrentWeight(), c.MaxWeight)
 	for i, it := range c.Inventory {
 		fmt.Printf("%d. %s (x%d)\n", i+1, it.Nom, it.Quantity)
 	}
