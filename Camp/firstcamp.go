@@ -6,7 +6,7 @@ import (
 	Blacksmith "jeu/Npc/Blacksmith"
 	ennemy "jeu/Npc/Ennemy"
 	Merchant "jeu/Npc/Merchant"
-	fight "jeu/fight"
+	training "jeu/fight/training"
 	"os"
 )
 
@@ -33,7 +33,7 @@ func Choicecamp(perso *char.Character) {
 			Blacksmith.ChoiceBlacksmith(perso)
 			return
 		case "3":
-			fight.TrainingFight(perso, &ennemy.Giant)
+			training.TrainingFight(perso, &ennemy.Giant)
 		case "4":
 			return
 		case "5":

@@ -3,6 +3,7 @@ package fightinventory
 import (
 	"fmt"
 	char "jeu/Character"
+	remove "jeu/equipment/removeitem"
 )
 
 func FightInventory(c *char.Character, maxhealth int) {
@@ -43,12 +44,12 @@ func FightInventory(c *char.Character, maxhealth int) {
 
 	case "grenade_incendiaire":
 		fmt.Printf("Vous lancez une %s ! L'ennemi prendra 10 dégâts de brûlure par tour.\n", itemChoisi.Nom)
-		c.RemoveItemAtIndex(targetIndex)
+		remove.RemoveItemAtIndex(c, targetIndex)
 
 	case "seringue_combat":
 		c.DamageBoost = 2
 		fmt.Printf("Vous utilisez une %s ! Vos dégâts sont augmentés de 100%% pendant 2 tours.\n", itemChoisi.Nom)
-		c.RemoveItemAtIndex(targetIndex)
+		remove.RemoveItemAtIndex(c, targetIndex)
 
 	case "seringue_soin":
 		heal := 50
@@ -59,7 +60,7 @@ func FightInventory(c *char.Character, maxhealth int) {
 			c.Health += heal
 		}
 		fmt.Printf("Vous utilisez %s et récupérez %d PV ! (PV actuels : %d)\n", itemChoisi.Nom, heal, c.Health)
-		c.RemoveItemAtIndex(targetIndex)
+		remove.RemoveItemAtIndex(c, targetIndex)
 	default:
 		return
 	}

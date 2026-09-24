@@ -7,7 +7,8 @@ import (
 	inv "jeu/Character/inventory/inventoryInteractive"
 	ennemy "jeu/Npc/Ennemy"
 	last "jeu/district/lastdistrict"
-	"jeu/fight"
+	boss "jeu/fight/bossfight"
+	random "jeu/fight/randomfight"
 	"time"
 )
 
@@ -38,10 +39,10 @@ func Choiceseconddistrict(perso *chara.Character) {
 			jeu.Choiceseccamp(perso)
 		case "2":
 			fmt.Println("Des grondements de pas raisonnent de partout...")
-			fight.LaunchRandomFight(perso)
+			random.LaunchRandomFight(perso)
 		case "3":
 			fmt.Println("Attention ! Un Géant Ursadon protège le prochain mur, affronte le avant d'accéder au prochain district !")
-			fight.BossFight(perso, &ennemy.Beartitan)
+			boss.BossFight(perso, &ennemy.Beartitan)
 			if perso.Unlock {
 				perso.Unlock = false
 				last.LastPoint(perso)

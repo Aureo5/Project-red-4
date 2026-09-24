@@ -1,4 +1,4 @@
-package fight
+package training
 
 import (
 	"fmt"

@@ -8,6 +8,7 @@ import (
 	ennemy "jeu/Npc/Ennemy"
 	second "jeu/district/seconddistrict"
 	fight "jeu/fight"
+	boss "jeu/fight/bossfight"
 	"time"
 )
 
@@ -50,7 +51,7 @@ func Choicefirstdistrict(perso *char.Character) {
 
 		case "3":
 			fmt.Println("Attention ! Un titan gueule de loup protège le prochain mur, affronte le avant d'accéder au prochain district !")
-			fight.BossFight(perso, &ennemy.Wolftitan)
+			boss.BossFight(perso, &ennemy.Wolftitan)
 			if perso.Unlock {
 				perso.Unlock = false
 				second.SecondPoint(perso)

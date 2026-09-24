@@ -1,11 +1,12 @@
-package character
+package equip
 
 import (
 	"fmt"
+	char "jeu/Character"
 	Equipment "jeu/equipment"
 )
 
-func Equip(c *Character, slot string, newEquip Equipment.Equipment) {
+func Equip(c *char.Character, slot string, newEquip Equipment.Equipment) {
 	if c.Equipment == nil {
 		c.Equipment = make(map[string]Equipment.Equipment)
 	}

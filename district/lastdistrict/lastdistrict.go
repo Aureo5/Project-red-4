@@ -8,6 +8,7 @@ import (
 	ennemy "jeu/Npc/Ennemy"
 	end "jeu/district/endgame"
 	"jeu/fight"
+	boss "jeu/fight/bossfight"
 	"time"
 )
 
@@ -41,7 +42,7 @@ func Choicelastdistrict(perso *chara.Character) {
 			fight.StartFight(perso, &ennemy.Coloss)
 		case "3":
 			fmt.Println("Attention ! Le titant colossal est apparu ! élimine-le afin de libérer le district et terminée l'invasion.")
-			fight.BossFight(perso, &ennemy.Colossaletitan)
+			boss.BossFight(perso, &ennemy.Colossaletitan)
 			if perso.Unlock {
 				perso.Unlock = false
 				end.Endgame(perso)

@@ -3,6 +3,7 @@ package fight
 import (
 	character "jeu/Character"
 	"jeu/Npc/Ennemy"
+	fight "jeu/fight"
 	"math/rand"
 )
 
@@ -17,5 +18,5 @@ func LaunchRandomFight(perso *character.Character) {
 		currentMob = &ennemy.Coloss
 	}
 
-	StartFight(perso, currentMob)
+	fight.StartFight(perso, currentMob)
 }
