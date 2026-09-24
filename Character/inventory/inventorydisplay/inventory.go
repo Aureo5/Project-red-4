@@ -1,10 +1,11 @@
-package character
+package inventorydisplay
 
 import (
 	"fmt"
+	char "jeu/Character"
 )
 
-func Displayinfo(c Character) {
+func Displayinfo(c char.Character) {
 	fmt.Println("\n===Informations sur le personnage=== ")
 	fmt.Printf("Nom        : %s\n", c.Name)
 	fmt.Printf("Classe     : %s\n", c.Nameclass)
@@ -16,7 +17,7 @@ func Displayinfo(c Character) {
 	fmt.Println("======================================")
 }
 
-func DisplayInv(c Character) {
+func DisplayInv(c char.Character) {
 	fmt.Println("\n=== INVENTAIRE ===")
 	if len(c.Inventory) == 0 {
 		fmt.Println("Votre inventaire est vide.")
@@ -27,7 +28,7 @@ func DisplayInv(c Character) {
 	}
 }
 
-func DisplayEquip(c Character) {
+func DisplayEquip(c char.Character) {
 	fmt.Println("\n=== Equipement ===")
 	if len(c.Equipment) == 0 {
 		fmt.Println("Votre inventaire d'équipement est vide.")

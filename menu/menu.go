@@ -3,6 +3,7 @@ package menu
 import (
 	"fmt"
 	character "jeu/Character"
+	inv "jeu/Character/inventory/inventorydisplay"
 	lore "jeu/lore"
 	"os"
 )
@@ -26,11 +27,11 @@ func Menu() {
 			fmt.Println("\nLancer la partie pour créer votre personnage")
 			Menu()
 		} else {
-			character.Displayinfo(perso)
+			inv.Displayinfo(perso)
 		}
 	case 3:
-		character.DisplayInv(perso)
-		character.DisplayEquip(perso)
+		inv.DisplayInv(perso)
+		inv.DisplayEquip(perso)
 		Menu()
 	case 4:
 		os.Exit(0)

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"jeu/Camp"
 	char "jeu/Character"
+	inv "jeu/Character/inventory/inventoryInteractive"
 	ennemy "jeu/Npc/Ennemy"
 	second "jeu/district/seconddistrict"
 	fight "jeu/fight"
@@ -56,7 +57,7 @@ func Choicefirstdistrict(perso *char.Character) {
 			}
 
 		case "4":
-			perso.DisplayCharacterMenu()
+			inv.DisplayCharacterMenu(perso)
 
 		default:
 			fmt.Println("Choix invalide, réessaie.")

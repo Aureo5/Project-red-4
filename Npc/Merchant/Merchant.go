@@ -3,6 +3,7 @@ package Npc
 import (
 	"fmt"
 	char "jeu/Character"
+	add "jeu/Character/Additem"
 	item "jeu/item"
 	"time"
 )
@@ -30,11 +31,11 @@ func ChoiceMerchant(perso *char.Character) {
 
 		switch choice {
 		case "1":
-			perso.Buy(item.NewCombatSyringe(1))
+			add.Buy(perso, item.NewCombatSyringe(1))
 		case "2":
-			perso.Buy(item.NewHealSyringe(1))
+			add.Buy(perso, item.NewHealSyringe(1))
 		case "3":
-			perso.Buy(item.NewGrenadeIncendiary(1))
+			add.Buy(perso, item.NewGrenadeIncendiary(1))
 		case "4":
 			fmt.Println("À bientôt !")
 			return

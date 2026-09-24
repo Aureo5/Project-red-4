@@ -1,16 +1,17 @@
-package character
+package Additem
 
 import (
 	"fmt"
+	char "jeu/Character"
 	item "jeu/item"
 )
 
-func (c *Character) AddItem(newItem item.Item) {
+func AddItem(c *char.Character, newItem item.Item) {
 	poidsAjoute := newItem.Weight * float64(newItem.Quantity)
 
-	if c.GetCurrentWeight()+poidsAjoute > c.MaxWeight {
-		fmt.Printf("❌ Trop lourd ! Impossible d'ajouter %s (Poids : %.1f/%.1f kg)\n",
-			newItem.Nom, c.GetCurrentWeight()+poidsAjoute, c.MaxWeight)
+	if GetCurrentWeight(c)+poidsAjoute > c.MaxWeight {
+		fmt.Printf("Trop lourd ! Impossible d'ajouter %s (Poids : %.1f/%.1f kg)\n",
+			newItem.Nom, GetCurrentWeight(c)+poidsAjoute, c.MaxWeight)
 		return
 	}
 
@@ -18,17 +19,17 @@ func (c *Character) AddItem(newItem item.Item) {
 		if it.Nom == newItem.Nom {
 			c.Inventory[i].Quantity += newItem.Quantity
 			fmt.Printf("Vous avez ajouté %s (Total : %d | Poids : %.1f kg)\n",
-				newItem.Nom, c.Inventory[i].Quantity, c.GetCurrentWeight())
+				newItem.Nom, c.Inventory[i].Quantity, GetCurrentWeight(c))
 			return
 		}
 	}
 
 	c.Inventory = append(c.Inventory, newItem)
 	fmt.Printf("Vous avez obtenu : %s ! (Poids total : %.1f/%.1f kg)\n",
-		newItem.Nom, c.GetCurrentWeight(), c.MaxWeight)
+		newItem.Nom, GetCurrentWeight(c), c.MaxWeight)
 }
 
-func (c *Character) Buy(i item.Item) {
+func Buy(c *char.Character, i item.Item) {
 	coutTotal := i.Prix * float64(i.Quantity)
 
 	if float64(c.Or) < coutTotal {
@@ -37,11 +38,11 @@ func (c *Character) Buy(i item.Item) {
 	}
 
 	c.Or -= int(coutTotal)
-	c.AddItem(i)
+	AddItem(c, i)
 	fmt.Printf("✅ %s x%d ajouté à l'inventaire ! (-%.0f or, il te reste %d or)\n", i.Nom, i.Quantity, coutTotal, c.Or)
 }
 
-func (c *Character) GetCurrentWeight() float64 {
+func GetCurrentWeight(c *char.Character) float64 {
 	var total float64 = 0
 	for _, it := range c.Inventory {
 		total += it.Weight * float64(it.Quantity)

@@ -1,13 +1,13 @@
-package character
+package class
 
 import (
 	"fmt"
 	char "jeu/Character"
+	inv "jeu/Character/inventory/inventorydisplay"
 	Firstdistrict "jeu/district/firstdistrict"
 	Equipment "jeu/equipment"
 )
 
-// différebntes classes de personnages avec leurs caractéristiques
 func Class(nom string) char.Character {
 	var choice string
 	for {
@@ -22,28 +22,27 @@ func Class(nom string) char.Character {
 		fmt.Print("Ton choix (1/2/3) : ")
 		fmt.Scan(&choice)
 
-		// création du personnage en fonction du choix de l'utilisateur
 		switch choice {
 		case "1":
 			perso := char.Character{Name: nom, Health: 80, Vitesse: 75, Nameclass: "eclaireur", Strength: 15, Or: 100, Level: 1, MaxWeight: 5}
 			char.Equip(&perso, "lame", Equipment.Basicsword)
 			char.Equip(&perso, "grappin", Equipment.Grappling)
 			char.Equip(&perso, "propulseur", Equipment.Basicpropulsor)
-			char.Displayinfo(perso)
+			inv.Displayinfo(perso)
 			Firstdistrict.StartingPoint(&perso)
 		case "2":
 			perso := char.Character{Name: nom, Health: 100, Vitesse: 50, Nameclass: "soldat", Strength: 20, Or: 100, Level: 1, MaxWeight: 5}
 			char.Equip(&perso, "lame", Equipment.Basicsword)
 			char.Equip(&perso, "grappin", Equipment.Grappling)
 			char.Equip(&perso, "propulseur", Equipment.Basicpropulsor)
-			char.Displayinfo(perso)
+			inv.Displayinfo(perso)
 			Firstdistrict.StartingPoint(&perso)
 		case "3":
 			perso := char.Character{Name: nom, Health: 120, Vitesse: 50, Nameclass: "medic", Strength: 15, Or: 100, Level: 1, MaxWeight: 5}
 			char.Equip(&perso, "lame", Equipment.Basicsword)
 			char.Equip(&perso, "grappin", Equipment.Grappling)
 			char.Equip(&perso, "propulseur", Equipment.Basicpropulsor)
-			char.Displayinfo(perso)
+			inv.Displayinfo(perso)
 			Firstdistrict.StartingPoint(&perso)
 		default:
 			fmt.Println("Choix invalide, réessaie.")
@@ -51,9 +50,8 @@ func Class(nom string) char.Character {
 	}
 }
 func CreateCharacter() char.Character {
-	// création du personnage
 	nom := char.Name()
 	perso := Class(nom)
-	char.Displayinfo(perso)
+	inv.Displayinfo(perso)
 	return perso
 }

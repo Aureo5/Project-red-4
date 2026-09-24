@@ -3,6 +3,7 @@ package fight
 import (
 	"fmt"
 	character "jeu/Character"
+	inv "jeu/Character/inventory/fight-inventory"
 	"jeu/Npc/Ennemy"
 	"jeu/skill"
 )
@@ -46,7 +47,7 @@ func BossFight(perso *character.Character, mob *character.Character) {
 		case "2":
 			actionUtilisee = skill.UseSkill(perso, mob)
 		case "3":
-			perso.FightInventory(saveperso)
+			inv.FightInventory(perso, saveperso)
 
 		case "4":
 			fmt.Println("Vous avez pris la fuite !")

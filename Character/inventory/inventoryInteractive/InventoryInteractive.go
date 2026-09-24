@@ -1,11 +1,14 @@
-package character
+package interactiveInventory
 
 import (
 	"fmt"
+	char "jeu/Character"
+	add "jeu/Character/Additem"
+	display "jeu/Character/inventory/inventorydisplay"
 )
 
 // À utiliser hors combat uniquement
-func (c *Character) DisplayCharacterMenu() {
+func DisplayCharacterMenu(c *char.Character) {
 	for {
 		fmt.Println("\n=== GESTION DU PERSONNAGE ===")
 		fmt.Println("1. Voir les informations du personnage")
@@ -19,11 +22,11 @@ func (c *Character) DisplayCharacterMenu() {
 
 		switch choix {
 		case "1":
-			Displayinfo(*c)
+			display.Displayinfo(*c)
 		case "2":
-			c.DisplayEquipment()
+			DisplayEquipment(c)
 		case "3":
-			c.DisplayFullInventory()
+			DisplayFullInventory(c)
 		case "0":
 			return
 		default:
@@ -32,7 +35,7 @@ func (c *Character) DisplayCharacterMenu() {
 	}
 }
 
-func (c *Character) DisplayEquipment() {
+func DisplayEquipment(c *char.Character) {
 	fmt.Println("\n=== ÉQUIPEMENTS ===")
 	if len(c.Equipment) == 0 {
 		fmt.Println("Aucun équipement actuellement porté.")
@@ -44,13 +47,13 @@ func (c *Character) DisplayEquipment() {
 	}
 }
 
-func (c *Character) DisplayFullInventory() {
+func DisplayFullInventory(c *char.Character) {
 	fmt.Println("\n=== INVENTAIRE ===")
 	if len(c.Inventory) == 0 {
 		fmt.Println("Votre inventaire est vide.")
 		return
 	}
-	fmt.Printf("%.1fkg / %.1fkg\n", c.GetCurrentWeight(), c.MaxWeight)
+	fmt.Printf("%.1fkg / %.1fkg\n", add.GetCurrentWeight(c), c.MaxWeight)
 	for i, it := range c.Inventory {
 		fmt.Printf("%d. %s (x%d)\n", i+1, it.Nom, it.Quantity)
 	}

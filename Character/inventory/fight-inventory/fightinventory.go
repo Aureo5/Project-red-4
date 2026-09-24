@@ -1,10 +1,11 @@
-package character
+package fightinventory
 
 import (
 	"fmt"
+	char "jeu/Character"
 )
 
-func (c *Character) FightInventory(maxhealth int) {
+func FightInventory(c *char.Character, maxhealth int) {
 	fmt.Printf("\n=== STATUT ===\n")
 	fmt.Printf("Joueur : %s | PV : %d | Force : %d | Vitesse : %d\n", c.Name, c.Health, c.Strength, c.Vitesse)
 

@@ -3,6 +3,7 @@ package ennemy
 import (
 	"fmt"
 	character "jeu/Character"
+	add "jeu/Character/Additem"
 )
 
 func GiveLoot(player *character.Character, mob character.Character) {
@@ -20,7 +21,7 @@ func GiveLoot(player *character.Character, mob character.Character) {
 	}
 	fmt.Println("\n===BUTIN OBTENU===")
 	for _, lootItem := range mob.Inventory {
-		player.AddItem(lootItem)
+		add.AddItem(player, lootItem)
 		fmt.Printf("• %s (x%d)\n", lootItem.Nom, lootItem.Quantity)
 	}
 }

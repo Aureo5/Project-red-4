@@ -3,6 +3,7 @@ package fight
 import (
 	"fmt"
 	character "jeu/Character"
+	inv "jeu/Character/inventory/fight-inventory"
 )
 
 func TrainingFight(perso *character.Character, mob *character.Character) {
@@ -29,7 +30,7 @@ func TrainingFight(perso *character.Character, mob *character.Character) {
 			fmt.Printf("Vous infligez %d dégâts à %s !\n", degatsJoueur, mob.Name)
 
 		case "2":
-			perso.FightInventory(saveperso)
+			inv.FightInventory(perso, saveperso)
 
 		case "3":
 			fmt.Println("Vous avez pris la fuite !")
