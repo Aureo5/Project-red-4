@@ -19,6 +19,7 @@ Cette fonction sert à lancer notre jeu, en écrivant "go run ." dans le termina
 
 
 ---Contribution---
+
 Pour pouvoir contribuer au projet : 
 A écrire dans le terminal :
 1. se connecter à notre repository -> "git clone https://github.com/Aureo5/Project-red-4.git" dans ton terminal
