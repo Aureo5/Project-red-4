@@ -30,7 +30,7 @@ func StartFight(perso *character.Character, mob *character.Character) {
 			fmt.Printf("Vous infligez %d dégâts à %s !\n", degatsJoueur, mob.Name)
 
 		case "2":
-			perso.DisplayCharacterMenu()
+			perso.FightInventory()
 
 		case "3":
 			fmt.Println("Vous avez pris la fuite !")
