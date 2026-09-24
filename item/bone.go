@@ -1,0 +1,5 @@
+package item
+
+func Bone(qty int) Item {
+	return Item{ID: "bone", Nom: "Os de monstre", Prix: 10.0, Quantity: qty, Weight: 0.3}
+}
