@@ -3,19 +3,29 @@ Project red groupe 4
 La bataille d'Osmos
 
 
+
 ---Prérequis---
+
 Pour le bon fonctionnement du jeux, il vous faut installer : Visual Studio Code version 1.27.1; Golang version 1.27.1
 
 
+
 ---Installation---
+
 Installez les fichiers en zip, extraire le contenue dans un fichier de votre choix (de préférence un nouveau vide).
+
 
 
 ---Utilisation---
 
 <img width="267" height="140" alt="image" src="https://github.com/user-attachments/assets/f50c48e6-f5bf-4185-a3ea-683c56dfb0e4" />
 
-Cette fonction sert à lancer notre jeu, en écrivant "go run ." dans le terminal.
+
+Cette fonction sert à lancer notre jeu.
+Avant de lancer le jeu il faut que tu sois dans le document "Project-red-4", pour cela il faut faire dans le terminal : 
+cd Project-red-4.
+Ensuite pour lancer le jeu il faut écrire : "go run ." dans le terminal.
+
 
 
 ---Contribution---
