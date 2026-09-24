@@ -3,10 +3,9 @@ package fight
 import (
 	"fmt"
 	character "jeu/Character"
-	"jeu/Npc/Ennemy"
 )
 
-func StartFight(perso *character.Character, mob *character.Character) {
+func TrainingFight(perso *character.Character, mob *character.Character) {
 	fmt.Printf("\nUN COMBAT COMMENCE CONTRE : %s (PV: %d) ⚔️\n", mob.Name, mob.Health)
 	save := mob.Health
 	saveperso := perso.Health
@@ -14,11 +13,6 @@ func StartFight(perso *character.Character, mob *character.Character) {
 
 	for perso.Health > 0 && mob.Health > 0 {
 		fmt.Printf("\n--- TOUR %d ---\n", tour)
-		if mob.BurnTurns > 0 {
-			mob.Health -= 10
-			mob.BurnTurns--
-		}
-		fmt.Printf("Le %s subit 10 dégâts de brûlure ! (PV restants : %d)\n", mob.Name, mob.Health)
 		fmt.Printf("Vos PV: %d | PV de %s: %d\n", perso.Health, mob.Name, mob.Health)
 		fmt.Println("1. Attaquer")
 		fmt.Println("2. Ouvrir l'inventaire")
@@ -31,11 +25,6 @@ func StartFight(perso *character.Character, mob *character.Character) {
 		switch choix {
 		case "1":
 			degatsJoueur := perso.Strength
-			if perso.DamageBoost > 0 {
-				degatsJoueur *= 2
-				perso.DamageBoost--
-				fmt.Println("Attaque boostée de +46% !")
-			}
 			mob.Health -= degatsJoueur
 			fmt.Printf("Vous infligez %d dégâts à %s !\n", degatsJoueur, mob.Name)
 
@@ -52,7 +41,6 @@ func StartFight(perso *character.Character, mob *character.Character) {
 
 		if mob.Health <= 0 {
 			fmt.Printf("\nVous avez vaincu %s !\n", mob.Name)
-			ennemy.GiveLoot(perso, *mob)
 			perso.Health = saveperso
 			mob.Health = save
 			return

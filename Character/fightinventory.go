@@ -5,7 +5,7 @@ import (
 )
 
 func (c *Character) FightInventory() {
-	fmt.Printf("\n=== STATUT EN COMBAT ===\n")
+	fmt.Printf("\n=== STATUT ===\n")
 	fmt.Printf("Joueur : %s | PV : %d | Force : %d | Vitesse : %d\n", c.Name, c.Health, c.Strength, c.Vitesse)
 
 	var indexConsommables []int
@@ -13,7 +13,7 @@ func (c *Character) FightInventory() {
 	fmt.Println("\n=== CONSOMMABLES DISPONIBLES ===")
 	compteur := 1
 	for realIndex, itemObj := range c.Inventory {
-		if estConsommable(itemObj.Nom) {
+		if itemObj.Type == "consommable" {
 			fmt.Printf("%d. %s (x%d)\n", compteur, itemObj.Nom, itemObj.Quantity)
 			indexConsommables = append(indexConsommables, realIndex)
 			compteur++
@@ -28,7 +28,7 @@ func (c *Character) FightInventory() {
 	fmt.Println("0. Annuler (retour au choix d'action)")
 
 	var choix int
-	fmt.Print("\nChoisis un consommable à utiliser : ")
+	fmt.Print("\nChoisis un consommable à utiliser (lettre par lettre) : ")
 	fmt.Scan(&choix)
 
 	if choix <= 0 || choix > len(indexConsommables) {
@@ -38,23 +38,23 @@ func (c *Character) FightInventory() {
 	targetIndex := indexConsommables[choix-1]
 	itemChoisi := c.Inventory[targetIndex]
 
-	switch itemChoisi.Nom {
-	case "Seringue de soin":
-		soin := 50
-		c.Health += soin
-		fmt.Printf("Vous utilisez %s et récupérez %d PV ! (PV actuels : %d)\n", itemChoisi.Nom, soin, c.Health)
+	switch itemChoisi.ID {
+
+	case "grenade_incendiaire":
+		fmt.Printf("Vous lancez une %s ! L'ennemi prendra 10 dégâts de brûlure par tour.\n", itemChoisi.Nom)
 		c.RemoveItemAtIndex(targetIndex)
 
-	default:
-		fmt.Println("Impossible d'utiliser cet objet.")
-	}
-}
+	case "seringue_combat":
+		c.DamageBoost = 2
+		fmt.Printf("Vous utilisez une %s ! Vos dégâts sont augmentés de 46%% pendant 2 tours.\n", itemChoisi.Nom)
+		c.RemoveItemAtIndex(targetIndex)
 
-func estConsommable(nom string) bool {
-	switch nom {
-	case "Seringue de soin":
-		return true
+	case "seringue_soin":
+		soin := 50
+		c.Health += soin
+		fmt.Printf("🧪 Vous utilisez %s et récupérez %d PV ! (PV actuels : %d)\n", itemChoisi.Nom, soin, c.Health)
+		c.RemoveItemAtIndex(targetIndex)
 	default:
-		return false
+		return
 	}
 }

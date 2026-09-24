@@ -32,7 +32,7 @@ func Choiceseconddistrict(perso *chara.Character) {
 
 		switch choix {
 		case "1":
-			fmt.Println("\nBienvenue au camp ! Ici tu pourras acheter des objets et sauvegarder ta partie !")
+			fmt.Println("\nBienvenue au camp ! Ici tu pourras acheter des objets.")
 			jeu.Choiceseccamp(perso)
 		case "2":
 			fmt.Println("Des grondements de pas raisonnent de partout...")

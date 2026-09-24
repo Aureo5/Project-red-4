@@ -8,14 +8,12 @@ import (
 func (c *Character) AddItem(newItem item.Item) {
 	poidsAjoute := newItem.Weight * float64(newItem.Quantity)
 
-	// Vérification de la limite de poids
 	if c.GetCurrentWeight()+poidsAjoute > c.MaxWeight {
 		fmt.Printf("❌ Trop lourd ! Impossible d'ajouter %s (Poids : %.1f/%.1f kg)\n",
 			newItem.Nom, c.GetCurrentWeight()+poidsAjoute, c.MaxWeight)
 		return
 	}
 
-	// Ajout ou empilement de l'objet
 	for i, it := range c.Inventory {
 		if it.Nom == newItem.Nom {
 			c.Inventory[i].Quantity += newItem.Quantity

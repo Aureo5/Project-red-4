@@ -4,13 +4,13 @@ import (
 	"fmt"
 	char "jeu/Character"
 	ennemy "jeu/Npc/Ennemy"
+	Blacksmith "jeu/Npc/Lastblacksmith"
 	Merchant "jeu/Npc/Merchant"
-	Blacksmith "jeu/Npc/Secblacksmith"
 	fight "jeu/fight"
 	"os"
 )
 
-func Choiceseccamp(perso *char.Character) {
+func Choicelastcamp(perso *char.Character) {
 	var choix string
 
 	for {
@@ -29,11 +29,11 @@ func Choiceseccamp(perso *char.Character) {
 			Merchant.ChoiceMerchant(perso)
 			return
 		case "2":
-			Blacksmith.Secblacksmith()
+			Blacksmith.Lastblacksmith()
 			Blacksmith.ChoiceSecblacksmith(perso)
 			return
 		case "3":
-			fight.TrainingFight(perso, &ennemy.Coloss)
+			fight.TrainingFight(perso, &ennemy.Giant)
 		case "4":
 			return
 		case "5":
