@@ -1,10 +1,29 @@
-# Project-red-4
-<<<<<<< HEAD
+Project-red-4
 Project red groupe 4
 =======
 Project red groupe 4
 La bataille d'Osmos
 
+---notre jeu---
+
+Dans ce jeu vous aurez la possibilité de choisir votre nom, une classe avec des compétences différentes et l'orientation de vos choix. Que ce soit dans le menu, dans les différents districts ou  dans le système de combat tour par tour vous serez toujours maître de vos choix. 
+
+
+---Aperçu---
+
+<img width="64" height="63" alt="image" src="https://github.com/user-attachments/assets/e96bb119-a6e2-44a2-9531-af34942ae392" />
+
+Ci-dessus notre menu qui vous permettras de lancer une partie.
+
+
+<img width="683" height="251" alt="image" src="https://github.com/user-attachments/assets/b9a94549-e895-400f-b2a1-4fc70a8590bb" />
+
+Ensuite, nous aurons l'Histoire qui permettra de faire vivre ce jeu puis le choix de votre nom et des différentes classes proposées.
+
+
+<img width="492" height="151" alt="image" src="https://github.com/user-attachments/assets/30fbf1f4-fb44-4263-a4c1-3f8cdba8ff68" />
+
+Et enfin, comme vu précédemment, le choix de l'orientation : combattre, allez au camp (marchand,forgeron...), aller au prochain district et accéder à votre inventaire.
 
 
 ---Prérequis---
