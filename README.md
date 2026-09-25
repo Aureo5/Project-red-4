@@ -26,6 +26,119 @@ Ensuite, nous aurons l'Histoire qui permettra de faire vivre ce jeu puis le choi
 Et enfin, comme vu précédemment, le choix de l'orientation : combattre, allez au camp (marchand,forgeron...), aller au prochain district et accéder à votre inventaire.
 
 
+---Arborescence---
+
+.
+├── Camp/
+│   ├── firstcamp.go
+│   ├── lastcamp.go
+│   └── secondcamp.go
+│
+├── Character/
+│   ├── Additem/
+│   │   └── Additem.go
+│   │
+│   ├── class/
+│   │   └── class.go
+│   │
+│   ├── inventory/
+│   │   ├── fight-inventory/
+│   │   │   └── fightinventory.go
+│   │   ├── inventoryInteractive/
+│   │   │   └── InventoryInteractive.go
+│   │   └── inventorydisplay/
+│   │       └── inventory.go
+│   │
+│   └── character.go
+│
+├── Npc/
+│   ├── Blacksmith/
+│   │   └── Blacksmith.go
+│   │
+│   ├── Enemy/
+│   │   ├── beartitan.go
+│   │   ├── coloss.go
+│   │   ├── colossaletitan.go
+│   │   ├── giant.go
+│   │   ├── loot.go
+│   │   ├── pattern.go
+│   │   └── wolftitan.go
+│   │
+│   ├── Lastblacksmith/
+│   │   └── lastblacksmith.go
+│   │
+│   ├── Merchant/
+│   │   └── Merchant.go
+│   │
+│   └── Secblacksmith/
+│       └── secblacksmith.go
+│
+├── district/
+│   ├── endgame/
+│   │   └── endgame.go
+│   │
+│   ├── firstdistrict/
+│   │   └── firstdistrict.go
+│   │
+│   ├── lastdistrict/
+│   │   └── lastdistrict.go
+│   │
+│   └── seconddistrict/
+│       └── seconddistrict.go
+│
+├── equipment/
+│   ├── equip/
+│   │   └── equip.go
+│   │
+│   ├── removeitem/
+│   │
+│   ├── Propulsor.go
+│   ├── bearsclaw.go
+│   ├── bearsgrapplinghook.go
+│   ├── bearspropulsor.go
+│   ├── equipment.go
+│   ├── grapplinghook.go
+│   ├── lame.go
+│   ├── wolfgrapplinghook.go
+│   ├── wolfpropulsor.go
+│   └── wolfsfang.go
+│
+├── fight/
+│   ├── bossfight/
+│   │   └── bossfight.go
+│   │
+│   ├── randomfight/
+│   │   └── randomfight.go
+│   │
+│   ├── training/
+│   │   └── trainingfight.go
+│   │
+│   └── fight.go
+│
+├── item/
+│   ├── bear-skin.go
+│   ├── bone.go
+│   ├── combatsyringe.go
+│   ├── grenadeincendiaire.go
+│   ├── healsyringe.go
+│   ├── item.go
+│   ├── skin.go
+│   └── wolf-skin.go
+│
+├── lore/
+│   └── lore.go
+│
+├── menu/
+│   └── menu.go
+│
+├── skill/
+│   └── skill.go
+│
+├── README.md
+├── go.mod
+└── main.go
+
+
 ---Prérequis---
 
 Pour le bon fonctionnement du jeux, il vous faut installer : Visual Studio Code version 1.27.1; Golang version 1.27.1
